@@ -9,17 +9,17 @@
 	    int sum=0,temp=0;
 	    while(n!=0)
 	    {
-	        int r=n%2;
-	        if(r==1)
+	
+	        if(n%2==1)
 	        { 
-	            sum++;
-	            if(sum>=temp) temp=sum;
+	          sum++;
+	          temp = Math.max(sum,temp);
 	        }
 	        else sum=0;
 		    // move to right bit
 	        n=n/2;
 		    
 	    }
-	    System.out.println(temp);
+	  	  System.out.println(sum);
 	 }
 	}
