@@ -16,7 +16,9 @@
 	            if(sum>=temp) temp=sum;
 	        }
 	        else sum=0;
+		    // move to right bit
 	        n=n/2;
+		    
 	    }
 	    System.out.println(temp);
 	 }
