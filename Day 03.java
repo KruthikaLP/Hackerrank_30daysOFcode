@@ -1,17 +1,30 @@
-
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
 import java.util.*;
-public class Day3 {
+import java.util.concurrent.*;
+import java.util.regex.*;
 
-	//possibly the cleanest code for this program...
-	
-	    public static void main(String[] args)
-	    {
-	        //Object Creation, variable declaration and memory allocation
-	        Scanner sc=new Scanner(System.in);
-	        int n=sc.nextInt();
-	        //crisp two conditionals covering all 4 cases
-	        if(n%2!=0 || (n>5 && n<21)) System.out.println("Weird");
-	        else System.out.println("Not Weird");
-	    }
-	}
 
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(bufferedReader.readLine().trim());
+
+        bufferedReader.close();
+        
+        if((N%2!=0) || (N%2==0 && N>=6 && N<=20)){ 
+              System.out.println("Weird");
+        }
+        else if((N%2==0 && N>=2 && N<=5) || (N%2==0 && N>20)){
+             System.out.println("Not Weird");
+        }
+        else{
+             System.out.println("Weird");
+        }
+        
+    }
+}
