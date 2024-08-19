@@ -1,43 +1,35 @@
+import java.util.Scanner;
+class MyCalculator {
+    /*
+    * Create the method long power(int, int) here.
+    */
+    long power(int n,int p)throws Exception{
+        if(n<0 || p<0){
+           throw new Exception("n or p should not be negative.");
+        }
+        else if(n==0 && p==0){
+            throw new Exception("n and p should not be zero.");
+        }
+        else{
+            return (long)Math.pow(n, p);
+        }
+    }
+}
 
-	import java.util.*;
-	import java.io.*;
-	import java.math.*;
-	//Write your code here
-
-	public class Day14 extends Exception {
-	    
-	    public int power(int n, int p) throws Exception{
-
-	        if (n <0 || p<0){
-	            throw new Exception("n and p should be non-negative");
-	        }
-	        
-	        return (int) Math.pow(n,p);
-	    }
-	}
-
-	class Solution{
-
-	    public static void main(String[] args) {
-	    
-	        Scanner in = new Scanner(System.in);
-	        int t = in.nextInt();
-	        while (t-- > 0) {
-	        
-	            int n = in.nextInt();
-	            int p = in.nextInt();
-	            Day14 myCalculator = new Day14();
-	            try {
-	                int ans = myCalculator.power(n, p);
-	                System.out.println(ans);
-	            }
-	            catch (Exception e) {
-	                System.out.println(e.getMessage());
-	            }
-	        }
-	        in.close();
-	    }
-	}
-
-
-
+public class Solution {
+    public static final MyCalculator my_calculator = new MyCalculator();
+    public static final Scanner in = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        while (in .hasNextInt()) {
+            int n = in .nextInt();
+            int p = in .nextInt();
+            
+            try {
+                System.out.println(my_calculator.power(n, p));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
