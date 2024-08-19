@@ -1,26 +1,37 @@
 
+import java.io.IOException;
+import java.lang.reflect.Method;
 
-	import java.util.*;
+class Printer
+{
+   //Write your code here
+   public static <E> void printArray(E[] a){
+       for(E e : a){
+           System.out.println(e);
+       }
+   }
+ 
+}
 
-	class Printer <T> {
-
-	    /**
-	    *    Method Name: printArray
-	    *    Print each element of the generic array on a new line. Do not return anything.
-	    *    @param A generic array
-	    **/
-	    
-	    // Write your code here
-
-	    public static <E> void printArray(E[] a)
-	    {
-	        for(E elements: a)
-	        {
-	            System.out.println(elements);
-	        }
-	    }
-	    
+public class Solution {
 
 
-	}
+    public static void main( String args[] ) {
+        Printer myPrinter = new Printer();
+        Integer[] intArray = { 1, 2, 3 };
+        String[] stringArray = {"Hello", "World"};
+        myPrinter.printArray(intArray);
+        myPrinter.printArray(stringArray);
+        int count = 0;
 
+        for (Method method : Printer.class.getDeclaredMethods()) {
+            String name = method.getName();
+
+            if(name.equals("printArray"))
+                count++;
+        }
+
+        if(count > 1)System.out.println("Method overloading is not allowed!");
+      
+    }
+}
