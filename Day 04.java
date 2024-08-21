@@ -1,24 +1,26 @@
+import java.io.*;
+import java.util.*;
 
-	import java.io.*;
-	import java.util.*;
-	public class Day4 {
-	    public static void main(String[] args) {
-	        //creating an object to allocate memory space for input variables...
-	        Scanner sc=new Scanner(System.in);
-	        int t=sc.nextInt();
-	        while(t!=0){
-	            String s=sc.next();
-	            String s1="",s2="";
-	            for(int i=0;i<s.length();i++){
-	                //charAt() function returns the character
-	                //found at index "i"...
-	                if(i%2!=0) s2=s2+s.charAt(i);
-	                else s1=s1+s.charAt(i);
-	            }
-	            //adding a space between the strings and printing it...
-	            System.out.println(s1+" "+s2);
-	            t--;
-	        }
-	    }
-	}
+public class Solution {
 
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        while(n>0){
+          String a ="";
+          String b = "";
+          String s = sc.next();
+          for(int i=0;i<s.length();i++){
+              if(i%2==0){
+                  a=a+s.charAt(i);
+              }
+              else{
+                  b=b+s.charAt(i);
+              }
+          } 
+            System.out.println(a+" "+b);
+          n--;
+        }
+    }
+}
