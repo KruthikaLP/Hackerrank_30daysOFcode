@@ -15,18 +15,18 @@ public class Solution {
         int e_year = sc.nextInt();
         
         int fine =0;
-        if(a_day<e_day){
+        if(a_year<e_year){
             fine=0;
         }
-         else if(a_year>e_year){
-                fine = 10000;
-        }
         else{
-            if(a_day>e_day){
-                fine=15*(a_day-e_day);
+              if(a_year>e_year){
+                fine = 10000;
             }
             else if(a_month>e_month){
                 fine=500*(a_month-e_month);
+            }
+           else if(a_day>e_day){
+                fine=15*(a_day-e_day);
             }
         }
         System.out.println(fine);
