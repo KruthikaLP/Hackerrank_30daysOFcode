@@ -26,20 +26,24 @@ public class Solution {
          int numberOfSwaps = 0;
         for (int i = 0; i < a.size(); i++) {
             for (int j = 0; j < a.size() - i - 1; j++) {  
+                if(a.get(j)>a.get(j+1)){
                     int temp = a.get(j);
                     a.set(j, a.get(j + 1));
                     a.set(j + 1, temp);
-                    
+                 
                     numberOfSwaps++;
                 }
-            }
+                }
             if (numberOfSwaps == 0) {
                 break;
             }
-        }
+            }
+        
         
         System.out.println("Array is sorted in " + numberOfSwaps + " swaps.");
         System.out.println("First Element: " + a.get(0));
         System.out.println("Last Element: " + a.get(a.size() - 1));
+   
+        
     }
 }
